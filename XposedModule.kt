@@ -18,7 +18,7 @@ class XposedModule : IXposedHookLoadPackage {
                     override fun replaceHookedMethod(param: MethodHookParam): Any {
                         val appInfo = param.args[0] as ApplicationInfo
                         if (appInfo.packageName == "com.tencent.mm") {
-                            return "IGG报警"
+                            return "报警"
                         }
                         return XposedHelpers.callMethod(param.thisObject, "getApplicationLabel", appInfo)
                     }
